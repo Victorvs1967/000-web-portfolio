@@ -1,32 +1,3 @@
-<<<<<<< Updated upstream
-import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AuthService } from '../service/auth.service';
-
-@Injectable()
-export class TokenInterceptor implements HttpInterceptor {
-
-  constructor(private auth: AuthService) {}
-
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const token = this.auth.getToken();
-    if (token) {
-      request = request.clone({
-        setHeaders: {
-          'authorization': 'Bearer '.concat(token)
-        }
-      });
-    }
-    return next.handle(request);
-  }
-}
-=======
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -49,4 +20,3 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
 }
->>>>>>> Stashed changes

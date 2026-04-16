@@ -17,78 +17,6 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { MatSelect, MatOption } from '@angular/material/select';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-add-project',
-  templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss']
-})
-export class AddProjectComponent implements OnInit {
-
-  image: Image = { id: '', name: '' };
-  skillsView: { value: Skill, viewValue: string }[] = [];
-
-  currentFile?: File;
-  createForm?: UntypedFormGroup;
-
-  public get links() {
-    return this.createForm?.get('links') as FormArray;
-  }
-
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private admin: AdminService,
-    private images: ImageService,
-  ) {
-    this.admin.getSkillList()
-      .pipe(
-        map(data => data
-          .map(item => this.skillsView = [...this.skillsView, { value: item, viewValue: item.name }])))
-      .subscribe();
-  }
-
-  ngOnInit(): void {
-    this.createForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      image: this.image,
-      skills: [[]],
-      links: this.formBuilder.array([
-        this.formBuilder.group({
-          name: ['web'],
-          url: [''],
-        }),
-        this.formBuilder.group({
-          name: ['github'],
-          url: [''],
-        }),
-      ]),
-    });
-  }
-
-  submitProject() {
-    let project: Project = this.createForm?.value;
-    project.name = this.createForm?.value.name;
-    project.description = this.createForm?.value.description;
-    project.links = this.createForm?.getRawValue().links;
-    project.image = this.createForm?.value.image;
-    project.skills = [...this.createForm?.value.skills];
-    this.admin.addProject(project).subscribe();
-  }
-
-  selectFile(event: any) {
-    this.currentFile = event.target.files[0];
-    if (this.currentFile) this.image.name = this.currentFile.name;
-  }
-
-  upload(event: any) {
-    event.preventDefault();
-    if (this.currentFile) this.images.upload(this.currentFile)
-    .pipe(
-      tap(response => this.image!.id = response.id))
-    .subscribe();
-  }
-}
-=======
     selector: 'app-add-project',
     templateUrl: './add-project.component.html',
     styleUrls: ['./add-project.component.scss'],
@@ -160,4 +88,3 @@ export class AddProjectComponent implements OnInit {
     .subscribe();
   }
 }
->>>>>>> Stashed changes

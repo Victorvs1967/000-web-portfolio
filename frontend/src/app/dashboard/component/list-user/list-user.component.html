@@ -8,15 +8,6 @@
       <ng-container matColumnDef="avatar">
         <th mat-header-cell *matHeaderCellDef> </th>
         <td class="avatar" mat-cell *matCellDef="let element">
-<<<<<<< Updated upstream
-          <div
-            *ngIf="element.avatar; else placeholder"
-            class="image-container"
-            [ngStyle]="{'background-image': ' url(' + element.avatar.avatarImg + ')'}"
-            >
-          </div>
-          <ng-template #placeholder>
-=======
           @if (element.avatar) {
             <div
               class="image-container"
@@ -24,7 +15,6 @@
               >
             </div>
           } @else {
->>>>>>> Stashed changes
             <div class="image-container avatar-placeholder"></div>
           }
         </td>

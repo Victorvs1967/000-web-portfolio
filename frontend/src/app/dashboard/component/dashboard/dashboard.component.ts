@@ -18,54 +18,6 @@ import { MatTooltip } from '@angular/material/tooltip';
 import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
-})
-export class DashboardComponent implements OnInit {
-
-  auth = inject(AuthService);
-  isAdmin?: Observable<boolean>;
-
-  isExpand: boolean = true;
-
-  constructor(
-    private admin: AdminService,
-    private router: Router,
-  ) { }
-
-  ngOnInit(): void {
-    this.isAdmin = this.auth.isAdmin;
-    this.admin._reloadCurrentRoute();
-  }
-
-  @modal(SignupComponent, null, '700px')
-  addUser() {
-    this.router.navigate(['admin', 'users']);
-  }
-
-  @modal(AddProjectComponent, null, '700px')
-  addProject() {
-    this.router.navigate(['admin', 'projects']);
-  }
-
-  @modal(AddSkillComponent, null, '700px')
-  addSkill() {
-    this.router.navigate(['admin', 'skills']);
-  }
-
-  @modal(AddImageComponent, null, '700px')
-  addImage() {
-    this.router.navigate(['admin', 'images']);
-  }
-
-  @modal(AddPageComponent, null, '700px')
-  addPage() {
-    this.router.navigate(['admin', 'pages']);
-  }
-}
-=======
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss'],
@@ -113,4 +65,3 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['admin', 'pages']);
   }
 }
->>>>>>> Stashed changes

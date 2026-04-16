@@ -3,16 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { ControlsComponent } from '../controls/controls.component';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-})
-export class MainComponent {
-
-}
-=======
     selector: 'app-main',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.scss'],
@@ -22,4 +12,3 @@ export class MainComponent {
 export class MainComponent {
 
 }
->>>>>>> Stashed changes

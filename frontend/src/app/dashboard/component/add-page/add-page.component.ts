@@ -11,43 +11,6 @@ import { MatFormField, MatLabel, MatHint } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-add-page',
-  templateUrl: './add-page.component.html',
-  styleUrls: ['./add-page.component.sass']
-})
-export class AddPageComponent implements OnInit {
-
-  createForm?: UntypedFormGroup;
-  page?: Page;
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private pageService: PageService,
-    @Inject(MAT_DIALOG_DATA) public data: Page,
-  ) { }
-
-  ngOnInit(): void {
-    this.createForm = this.formBuilder.group({
-      name: ['', [ Validators.required ]],
-      title: [''],
-      subtitle: [''],
-      description: [''],
-      payload: [''],
-    });
-  }
-
-  submitPage() {
-    this.page = this.createForm?.value;
-    if (this.page) {
-      this.page.payload = JSON.parse(this.createForm?.value.payload);
-      this.pageService.addPage(this.page)
-        .subscribe();
-    }
-  }
-
-}
-=======
     selector: 'app-add-page',
     templateUrl: './add-page.component.html',
     styleUrls: ['./add-page.component.sass'],
@@ -84,4 +47,3 @@ export class AddPageComponent implements OnInit {
   }
 
 }
->>>>>>> Stashed changes

@@ -16,72 +16,6 @@ import { NgStyle, AsyncPipe } from '@angular/common';
 import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
-})
-export class HeaderComponent implements OnInit {
-
-  @Output() taggledEvent: any = new EventEmitter();
-
-  private styleManager = inject(StyleManagerService);
-  private _renderer = inject(Renderer2);
-
-  isDark: boolean;
-  isLogin: Observable<boolean> | undefined;
-
-  file: string | undefined;
-  isUser: User | undefined;
-
-  constructor(
-    private image: ImageService,
-    private admin: AdminService,
-    private auth: AuthService,
-    private router: Router,
-  ) {
-    this.isDark = this.styleManager.isDark;
-  }
-
-  ngOnInit(): void {
-    this.isLogin = this.auth.isLoggedIn;
-    this.admin.getUser(this.auth.getUser())
-      .pipe(
-        map(user => {
-          this.isUser = user;
-          if (user.avatar) {
-            this.image.img_download(user.avatar.id)
-              .pipe(
-                map(img => this.file = img)
-              )
-             .subscribe();
-          }
-        })
-      )
-      .subscribe();
-  }
-
-  @modal(LoginComponent)
-  login() {
-    this.router.navigate(['admin']);
-  }
-
-  @modal(AlertComponent, AlertComponent.defaultAlertData)
-  logout() {
-    this.auth.logout();
-    this.router.navigate(['home']);
-  }
-
-  taggledAction() {
-    this.taggledEvent.emit('');
-  }
-
-  toggleDarkTheme() {
-    this.styleManager.toggleDarkTheme(this._renderer);
-    this.isDark = this.styleManager.isDark;
-  }
-}
-=======
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
@@ -147,4 +81,3 @@ export class HeaderComponent implements OnInit {
     this.isDark = this.styleManager.isDark;
   }
 }
->>>>>>> Stashed changes

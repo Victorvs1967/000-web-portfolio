@@ -11,49 +11,6 @@ import { RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-list-image',
-  templateUrl: './list-image.component.html',
-  styleUrls: ['./list-image.component.scss']
-})
-export class ListImageComponent {
-
-  auth = inject(AuthService);
-  isAdmin: Observable<boolean>;
-
-  images: any[] = [];
-
-  constructor(
-    private image: ImageService,
-    private _bottomSheet: MatBottomSheet,
-  ) {
-    this.isAdmin = this.auth.isAdmin;
-    this.viewList();
-  }
-
-  viewList() {
-    this.image.list().subscribe(data => {
-      data.forEach(item => {
-        this.images = [...this.images, item];
-        const style = { width: '100%', height: 'auto', radius: '.5rem' };
-        this.image.download(item.id, style).subscribe();
-      });
-    });
-  }
-
-  delete(id: string): void {
-    this.image.delete(id).subscribe(() => {
-      const items = document.querySelectorAll('li');
-      if (items !== null) items.forEach(item => item.innerHTML = '');
-      this.viewList();
-    });
-  }
-
-  toProject(image: any) {
-    this._bottomSheet.open(ProjectListComponent, { data: { image } });
-  }
-}
-=======
     selector: 'app-list-image',
     templateUrl: './list-image.component.html',
     styleUrls: ['./list-image.component.scss'],
@@ -96,4 +53,3 @@ export class ListImageComponent {
     this._bottomSheet.open(ProjectListComponent, { data: { image } });
   }
 }
->>>>>>> Stashed changes

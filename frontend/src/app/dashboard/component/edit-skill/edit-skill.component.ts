@@ -12,39 +12,6 @@ import { MatFormField, MatLabel, MatHint } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-edit-skill',
-  templateUrl: './edit-skill.component.html',
-  styleUrls: ['./edit-skill.component.scss']
-})
-export class EditSkillComponent implements OnInit {
-
-  skill?: Skill;
-
-  editForm?: UntypedFormGroup;
-
-  constructor(
-    private formBuilder: UntypedFormBuilder,
-    private admin: AdminService,
-  ) { }
-
-  ngOnInit(): void {
-    this.skill = ListSkillComponent.skill;
-    this.editForm = this.formBuilder.group({
-      name: [this.skill.name, [Validators.required]],
-      description: [this.skill.description, [Validators.required]],
-      percent: this.skill.percent,
-      id: this.skill.id
-    });
-  }
-
-  submitSkill() {
-    this.admin.editSkill(this.editForm?.value).subscribe();
-  }
-
-
-}
-=======
     selector: 'app-edit-skill',
     templateUrl: './edit-skill.component.html',
     styleUrls: ['./edit-skill.component.scss'],
@@ -77,4 +44,3 @@ export class EditSkillComponent implements OnInit {
 
 
 }
->>>>>>> Stashed changes

@@ -11,44 +11,6 @@ import { PageService } from 'src/app/service/page.service';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-portfolio',
-  templateUrl: './portfolio.component.html',
-  styleUrls: ['./portfolio.component.scss']
-})
-export class PortfolioComponent implements OnInit {
-
-  pages = inject(PageService);
-  title = inject(Title);
-  github = faGithub;
-  eye = faEye;
-  page?: Page;
-
-  projects: Project[] = [];
-
-  constructor(private admin: AdminService, private image: ImageService) {
-    this.admin.getProjectList()
-      .pipe(
-        map(data => {
-          data.forEach(project => {
-            this.projects = [...this.projects, project];
-            const style = { width: '100%', height: '300px', radius: '1rem' };
-            this.image.download(project.image.id, style).subscribe();
-          });
-          this.title.setTitle('Portfolio');
-        })
-      ).subscribe();
-  }
-
-  ngOnInit(): void {
-    this.pages.getPage('portfolio')
-      .pipe(
-        map(page => this.page = page)
-      ).subscribe();
-  }
-
-}
-=======
     selector: 'app-portfolio',
     templateUrl: './portfolio.component.html',
     styleUrls: ['./portfolio.component.scss'],
@@ -87,4 +49,3 @@ export class PortfolioComponent implements OnInit {
   }
 
 }
->>>>>>> Stashed changes

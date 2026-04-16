@@ -15,47 +15,6 @@ import { MatFormField, MatLabel, MatHint } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 
 @Component({
-<<<<<<< Updated upstream
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
-})
-export class LoginComponent implements OnInit {
-
-  loginForm?: UntypedFormGroup;
-
-  isLogin: Observable<boolean> | undefined;
-  isAdmin: Observable<boolean> | undefined;
-
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: LoginData,
-    private formBuilder: UntypedFormBuilder,
-    private router: Router,
-    private auth: AuthService,
-  ) { }
-
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
-    });
-  }
-
-  submitLogin() {
-    this.auth.login(this.loginForm?.value)
-    .pipe(map(res => {
-      this.isLogin = this.auth.isLoggedIn;
-      this.isAdmin = this.auth.isAdmin;
-    }))
-    .subscribe(() => this.router.navigate(['admin']));
-  }
-
-  @modal(SignupComponent)
-  signup() {
-    this.router.navigate(['admin']);
-  }
-}
-=======
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
@@ -96,4 +55,3 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['admin']);
   }
 }
->>>>>>> Stashed changes
