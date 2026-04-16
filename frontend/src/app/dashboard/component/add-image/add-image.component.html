@@ -1,0 +1,15 @@
+  <h2 mat-dialog-title>Add Image</h2>
+  <button mat-icon-button class="btn-close" [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+  <mat-divider></mat-divider>
+  <form class="image-form">
+    <mat-form-field class="file-input" appearance="outline">
+      <mat-toolbar>
+        <input matInput class="img-input" [value]="image.name || 'Project picture'" />
+        <button class="img-btn" mat-mini-fab color="primary" [disabled]="!currentFile" (click)="upload($event)">
+          <mat-icon>upload</mat-icon>
+        </button>
+      </mat-toolbar>
+      <input type="file" id="fileInput" (change)="selectFile($event)" />
+      <mat-hint>Image ID: {{ image.id || 'Photo upload yet.' }}</mat-hint>
+    </mat-form-field>
+  </form>

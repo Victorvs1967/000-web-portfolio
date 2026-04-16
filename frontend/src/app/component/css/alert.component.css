@@ -1,0 +1,35 @@
+.alert-link {
+  text-decoration: none;
+  color: #06357a;
+  font-weight: 700;
+}
+.alert:hover {
+  cursor: pointer;
+}
+.alert-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+.alert-heading span {
+  display: flex;
+  align-items: center;
+}
+.alert-heading span mat-icon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.alert-heading button {
+  margin-left: auto;
+}
+.alert-message {
+  padding: 1rem 1rem 0;
+  font-size: 1.4rem;
+}
+.alert-message mat-divider {
+  margin-top: 0.5rem;
+}
+.alert-footer {
+  padding: 0 2rem 1rem;
+}/*# sourceMappingURL=alert.component.css.map */

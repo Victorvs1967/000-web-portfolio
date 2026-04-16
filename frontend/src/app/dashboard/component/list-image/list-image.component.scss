@@ -1,0 +1,41 @@
+.file-container {
+  max-width: 90%;
+  margin: 2vh auto 0;
+  padding: 2vw;
+}
+
+.list-wrapper {
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1vw;
+  list-style-type: none;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #efefef;
+    border-radius: .5rem;
+
+    .img-container {
+      border-radius: .5rem;
+    }
+
+    a .detail-image {
+      width: 170px;
+      height: auto;
+    }
+
+    .img-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+mat-divider {
+  margin-top: 1rem;
+}

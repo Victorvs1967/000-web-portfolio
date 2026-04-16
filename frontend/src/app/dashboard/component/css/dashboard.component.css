@@ -1,0 +1,28 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.sidenav-item {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  gap: 1rem;
+}
+.sidenav-item span {
+  padding: 0.25em 0;
+}
+
+.sidenav-btn {
+  z-index: 100;
+  transition: 0.3s ease-in-out;
+  transform: rotate(0deg);
+  position: absolute;
+  bottom: 25%;
+  right: 1rem;
+  float: right;
+}
+
+.sidenav-btn.rotated {
+  transform: rotate(180deg);
+  left: 1.5rem;
+}/*# sourceMappingURL=dashboard.component.css.map */

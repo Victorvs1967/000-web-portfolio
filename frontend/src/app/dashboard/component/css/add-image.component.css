@@ -1,0 +1,39 @@
+.image-form {
+  padding: 2rem;
+}
+
+.file-upload {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.file-input {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#fileInput {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.img-input {
+  font-size: 1.5rem !important;
+  text-overflow: ellipsis;
+}
+
+.img-btn {
+  margin-left: 1rem;
+}/*# sourceMappingURL=add-image.component.css.map */

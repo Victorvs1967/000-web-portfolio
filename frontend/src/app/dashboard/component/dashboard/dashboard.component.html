@@ -1,0 +1,139 @@
+<app-header (taggledEvent)="sidenav.toggle()"></app-header>
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list role="list">
+      <mat-list-item role="listItem" (click)="isExpand = !isExpand;">
+        <mat-icon class="sidenav-btn" [ngClass]="{ 'rotated': !isExpand }">chevron_left</mat-icon>
+      </mat-list-item>
+      <mat-list-item
+        role="listitem"
+        routerLink="/admin"
+        matTooltip="Home"
+        matTooltipPosition="left"
+        [matTooltipDisabled]="isExpand"
+        >
+        <div class="sidenav-item">
+          <mat-icon>home</mat-icon>
+          @if (isExpand) {
+            <span>Home</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-list-item mat-icon-button
+        role="listitem"
+        [matMenuTriggerFor]="userMenu"
+        aria-label="icon-button with a menu"
+        matTooltip="User"
+        matTooltipPosition="left"
+        [matTooltipDisabled]="isExpand"
+        >
+        <div class="sidenav-item">
+          <mat-icon>person</mat-icon>
+          @if (isExpand) {
+            <span>User</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-menu #userMenu="matMenu" xPosition="after">
+        @if (isAdmin | async) {
+          <button mat-menu-item (click)="addUser()">
+            <mat-icon>person_add</mat-icon>
+            Add User
+          </button>
+        }
+        <button mat-menu-item routerLink="users">
+          <mat-icon>group</mat-icon>
+          Users
+        </button>
+      </mat-menu>
+      <mat-list-item mat-icon-button
+        role="listitem"
+        [matMenuTriggerFor]="projectMenu"
+        aria-label="icon-button with a menu"
+        matTooltip="Portfolio"
+        matTooltipPosition="left"
+        [matTooltipDisabled]="isExpand"
+        >
+        <div class="sidenav-item">
+          <mat-icon>work</mat-icon>
+          @if (isExpand) {
+            <span>Project</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-menu #projectMenu="matMenu" xPosition="after">
+        @if (isAdmin | async) {
+          <button mat-menu-item (click)="addProject()"><mat-icon>medical_services</mat-icon>Add Project</button>
+        }
+        <button mat-menu-item routerLink="projects"><mat-icon>cases</mat-icon>Projects</button>
+      </mat-menu>
+      <mat-list-item mat-icon-button role="listitem" [matMenuTriggerFor]="skillMenu" aria-label="icon-button with a menu"
+        matTooltip="Skill" matTooltipPosition="left" [matTooltipDisabled]="isExpand">
+        <div class="sidenav-item">
+          <mat-icon>insert_chart</mat-icon>
+          @if (isExpand) {
+            <span>Skill</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-menu #skillMenu="matMenu" xPosition="after">
+        @if (isAdmin | async) {
+          <button mat-menu-item (click)="addSkill()"><mat-icon>add_chart</mat-icon>Add Skill</button>
+        }
+        <button mat-menu-item routerLink="skills"><mat-icon>library_books</mat-icon>Skills</button>
+      </mat-menu>
+      <mat-list-item mat-icon-button role="listitem" [matMenuTriggerFor]="imageMenu" aria-label="icon-button with a menu"
+        matTooltip="Image" matTooltipPosition="left" [matTooltipDisabled]="isExpand">
+        <div class="sidenav-item">
+          <mat-icon>photo</mat-icon>
+          @if (isExpand) {
+            <span>Image</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-menu #imageMenu="matMenu" xPosition="after">
+        @if (isAdmin | async) {
+          <button mat-menu-item (click)="addImage()"><mat-icon>add_photo_alternate</mat-icon>Add Image</button>
+        }
+        <button mat-menu-item routerLink="images"><mat-icon>photo_library</mat-icon>Images</button>
+      </mat-menu>
+      <mat-list-item role="listitem"
+        matTooltip="Blog" matTooltipPosition="left" [matTooltipDisabled]="isExpand">
+        <div class="sidenav-item">
+          <mat-icon>wysiwyg</mat-icon>
+          @if (isExpand) {
+            <span>Blog</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-list-item mat-icon-button role="listitem" [matMenuTriggerFor]="pagetMenu" aria-label="icon-button with a menu"
+        matTooltip="Pages" matTooltipPosition="left" [matTooltipDisabled]="isExpand">
+        <div class="sidenav-item">
+          <mat-icon>web</mat-icon>
+          @if (isExpand) {
+            <span>Page</span>
+          }
+        </div>
+      </mat-list-item>
+      <mat-menu #pagetMenu="matMenu" xPosition="after">
+        @if (isAdmin | async) {
+          <button mat-menu-item (click)="addPage()"><mat-icon>add_to_queue</mat-icon>Add Page</button>
+        }
+        <button mat-menu-item routerLink="pages"><mat-icon>dynamic_feed</mat-icon>Pages</button>
+      </mat-menu>
+      <mat-list-item role="listitem" routerLink="/admin" matTooltip="Setting" matTooltipPosition="left"
+        [matTooltipDisabled]="isExpand">
+        <div class="sidenav-item">
+          <mat-icon>settings</mat-icon>
+          @if (isExpand) {
+            <span>Settings</span>
+          }
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

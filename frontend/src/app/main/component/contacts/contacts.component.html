@@ -1,0 +1,90 @@
+<section class="container sec-05 contacts" id="contacts">
+  <div class="contact-container">
+    <div class="main-title">
+      <h2>Contact <span>Me</span><span class="bg-text">ContactMe</span></h2>
+    </div>
+    <div class="contact-content-container">
+      @if (contactPage) {
+        <div class="left-contact">
+          <h4>{{ contactPage.title }}</h4>
+          <p>{{ contactPage.description }}</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <fa-icon [icon]="locationDot"></fa-icon>
+                <span>Location:</span>
+              </div>
+              <p>{{ contactPage.payload.address }}</p>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <fa-icon [icon]="envelope"></fa-icon>
+                <span>Email:</span>
+              </div>
+              <p>
+                <a class="contact-link" href="mailto://{{ contactPage.payload.email }}" target="_blank">
+                  <span>{{ contactPage.payload.email }}</span>
+                </a>
+              </p>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <fa-icon [icon]="globe"></fa-icon>
+                <span>Website:</span>
+              </div>
+              <p>
+                <a class="contact-link" href="{{ contactPage.payload.web }}" target="_blank">
+                  <span>{{ contactPage.payload.web }}</span>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-icons">
+            <div class="contact-icon">
+              <a class="contact-link" href="{{ contactPage.payload.github }}" target="_blank">
+                <fa-icon [icon]="github"></fa-icon>
+              </a>
+            </div>
+            <div class="contact-icon">
+              <a class="contact-link" href="{{ contactPage.payload.linkedin }}" target="_blank">
+                <fa-icon [icon]="linkedinIn"></fa-icon>
+              </a>
+            </div>
+            <div class="contact-icon">
+              <a class="contact-link" href="{{ contactPage.payload.telegram }}" target="_blank">
+                <fa-icon [icon]="telegram"></fa-icon>
+              </a>
+            </div>
+            <div class="contact-icon">
+              <a class="contact-link" href="{{ contactPage.payload.facebook }}" target="_blank">
+                <fa-icon [icon]="facebook"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+      <div class="right-contact">
+        @if (contactForm) {
+          <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+            <div class="input-control input-control-block">
+              <input type="text" placeholder="Your name" formControlName="name" required>
+              <input type="text" placeholder="Your email" formControlName="mailTo" required>
+            </div>
+            <div class="input-control">
+              <input type="text" placeholder="Your subject" formControlName="subject" required>
+            </div>
+            <div class="input-control">
+              <textarea name="" id="" cols="15" rows="8" placeholder="Your message here..." formControlName="message"></textarea>
+            </div>
+            <div class="submit-btn">
+              <button type="submit" class="main-btn">
+                <span class="btn-text">Send Message</span>
+                <fa-icon [icon]="faCheckCircle" class="btn-icon"></fa-icon>
+              </button>
+            </div>
+          </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>

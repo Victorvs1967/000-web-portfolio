@@ -1,0 +1,51 @@
+version: "3.9"
+
+services:
+  # Mongo DB
+  database_mongo:
+    container_name: mongo_container
+    image: "mongo:4.4.7"
+    hostname: portfolio_mongo_host
+    volumes:
+      - ./mongodb_data:/data/db
+    # means you want to set data on container persist on your local folder named mongo-volume ./data/db is a folder that already created inside the mongo container.
+    # ports:
+    #   - 27017:27017
+    networks:
+      - backend
+  # Backend
+  backend_spring:
+    container_name: backend_container
+    image: victorvsm/portfolio_backend:v01
+    env_file:
+      - ./.env
+    environment:
+      MONGO_URI: database_mongo
+      HOST_URL: ${HOST_URL}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      MAIL_LOGIN: ${MAIL_LOGIN}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+    ports:
+      - 8888:8080
+    depends_on:
+      - database_mongo
+    networks:
+      - backend
+  # Frontend
+  frontend_angular:
+    container_name: frontend_container
+    image: victorvsm/portfolio_frontend:v01
+    ports:
+      - 4200:80
+    networks:
+      - frontend
+
+networks:
+  backend:
+    external: false
+    name: backend
+  frontend:
+    external: false
+    name: frontend

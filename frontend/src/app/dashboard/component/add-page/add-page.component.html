@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Add Page</h2>
+<button mat-icon-button class="btn-close" [mat-dialog-close]="true"><mat-icon>close</mat-icon></button>
+<mat-divider></mat-divider>
+@if (createForm) {
+  <form mat-dialog-content [formGroup]="createForm" (ngSubmit)="submitPage()"
+    enctype="multipart/form-data">
+    <div class="form-inputs">
+      <mat-form-field appearance="outline">
+        <mat-label>Page name</mat-label>
+        <input matInput placeholder="Enter page name..." type="text" formControlName="name" required>
+        <mat-hint>page name</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Page Title</mat-label>
+        <input matInput placeholder="Enter page title..." type="text" formControlName="title">
+        <mat-hint>page title</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Page Subtitle</mat-label>
+        <input matInput placeholder="Enter page subtitle..." type="text" formControlName="subtitle">
+        <mat-hint>page subtitle</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Enter description..." type="text" formControlName="description"></textarea>
+        <mat-hint>description</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Payload</mat-label>
+        <textarea matInput placeholder="Enter payload..." type="text" formControlName="payload"></textarea>
+        <mat-hint>payload</mat-hint>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="btn-group">
+      <button mat-stroked-button class="btn-primary" color="primary" type="submit" [mat-dialog-close]="true"
+      [disabled]="createForm.invalid">Submit</button>
+    </div>
+  </form>
+}

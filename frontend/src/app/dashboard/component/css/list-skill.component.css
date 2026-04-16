@@ -1,0 +1,57 @@
+.list-skill {
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+.mat-header-cell {
+  font-size: 1rem;
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.row:not(.expanded-row):hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+tr.row:not(.expanded-row):active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.row td {
+  border-bottom-width: 0;
+}
+
+.element-detail {
+  overflow: hidden;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.element-diagram {
+  min-height: 100px;
+  padding: 1rem;
+  font-weight: lighter;
+}
+
+.element-created-attribution {
+  opacity: 0.5;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+mat-divider {
+  margin-top: 1rem;
+}/*# sourceMappingURL=list-skill.component.css.map */

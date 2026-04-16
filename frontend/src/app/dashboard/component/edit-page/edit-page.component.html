@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Edit Page</h2>
+<button mat-icon-button class="btn-close" [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+<mat-divider></mat-divider>
+@if (editForm) {
+  <form mat-dialog-content [formGroup]="editForm" (ngSubmit)="submitPage()"
+    enctype="multipart/form-data">
+    <div class="form-inputs">
+      <mat-form-field appearance="outline">
+        <mat-label>Page name</mat-label>
+        <input matInput placeholder="Enter page name..." type="text" formControlName="name" required>
+        <mat-hint>page name</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Enter title..." type="text" formControlName="title">
+        <mat-hint>title</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Subtitle</mat-label>
+        <input matInput placeholder="Enter subtitle..." type="text" formControlName="subtitle">
+        <mat-hint>subtitle</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Enter description..." type="text" formControlName="description"></textarea>
+        <mat-hint>description</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Payload</mat-label>
+        <textarea matInput placeholder="Enter payload..." type="text" formControlName="payload"></textarea>
+        <mat-hint>payload</mat-hint>
+      </mat-form-field>
+    </div>
+    <mat-card-actions class="btn-group" [align]="'end'">
+      <button mat-stroked-button color="primary" [mat-dialog-close]="true" type="submit"
+      [disabled]="editForm.invalid">Submit</button>
+    </mat-card-actions>
+  </form>
+}

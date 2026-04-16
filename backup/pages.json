@@ -1,0 +1,90 @@
+[
+  {
+   "name": "home",
+    "title": "Victor Smirnov",
+    "subtitle": "web development",
+    "description": "I'm a Web Developer, I love to create beatiful and functional websites. Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste autem nihil beatae aperiam id odio facere repellat voluptatibus, dolores rerum minus fuga tempora earum iusto, architecto totam, dolorem mollitia? Deserunt, possimus.",
+    "payload": {
+      "address": "Kiev, Ukraine",
+      "email": "victorsmirnov67@gmail.com"
+    }
+  },
+  {
+    "name": "about",
+    "title": "information about me",
+    "subtitle": "",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fuga dolorum non numquam illum ad cumque dolor, adipisci molestiae maiores eum incidunt architecto enim, totam dolore libero esse quas aspernatur voluptate voluptatum harum aut laborum? Nobis, totam molestias, molestiae repellendus quia quos unde debitis eaque quo soluta est et adipisci nemo quibusdam nam. Deserunt ipsum, aperiam debitis rerum, reiciendis facilis fuga ducimus excepturi veniam et optio mollitia, voluptatem ullam enim nihil architecto dolorem. Voluptatum nulla aliquam praesentium explicabo, blanditiis cupiditate.",
+    "payload": {
+      "skills": {
+        "HTML": 80,
+        "CSS": 75,
+        "JavaScript": 65,
+        "Java": 60,
+        "Python": 65,
+        "Angular": 61
+      },
+      "cards": {
+        "projects": "30+",
+        "years": "3+",
+        "clients": "20+",
+        "reviews": "20+"
+      },
+      "cv": {
+        "2013-2022": {
+          "position": "Head of the Project",
+          "company": "MVHU",
+          "description": ""
+        },
+        "2012-2013": {
+          "position": "CEO",
+          "company": "Magnat",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officia architecto voluptas. Eligendi labore odio dolorum, quod voluptas, adipisci quidem earum eum mollitia officiis vitae possimus ut nesciunt alias optio!"
+        },
+        "2010-2012": {
+          "position": "hief of Quality Department",
+          "company": "Triada",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officia architecto voluptas. Eligendi labore odio dolorum, quod voluptas, adipisci quidem earum eum mollitia officiis vitae possimus ut nesciunt alias optio!"
+        },
+        "2009-2010": {
+          "position": "CEO",
+          "company": "Media Print",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officia architecto voluptas. Eligendi labore odio dolorum, quod voluptas, adipisci quidem earum eum mollitia officiis vitae possimus ut nesciunt alias optio!"
+        },
+        "1999-2010": {
+          "position": "CTO",
+          "company": "Waterpas Print",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officia architecto voluptas. Eligendi labore odio dolorum, quod voluptas, adipisci quidem earum eum mollitia officiis vitae possimus ut nesciunt alias optio!"
+        },
+        "1993-1999": {
+          "position": "CTO",
+          "company": "Sobytie Publish",
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem officia architecto voluptas. Eligendi labore odio dolorum, quod voluptas, adipisci quidem earum eum mollitia officiis vitae possimus ut nesciunt alias optio!"
+        }
+      }
+    }
+  },
+  {
+    "name": "contacts",
+    "title": "information about me",
+    "subtitle": "",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fuga dolorum non numquam illum ad cumque dolor, adipisci molestiae maiores eum incidunt architecto enim, totam dolore libero esse quas aspernatur voluptate voluptatum harum aut laborum? Nobis, totam molestias, molestiae repellendus quia quos unde debitis eaque quo soluta est et adipisci nemo quibusdam nam. Deserunt ipsum, aperiam debitis rerum, reiciendis facilis fuga ducimus excepturi veniam et optio mollitia, voluptatem ullam enim nihil architecto dolorem. Voluptatum nulla aliquam praesentium explicabo, blanditiis cupiditate.",
+    "payload": {
+      "address": "Kiev, Ukraine.",
+      "email": "victorsmirnov67@gmail.com",
+      "web": "http://portfolio-dev.club",
+      "github": "https://github.com/Victorvs1967",
+      "linkedin": "https://www.linkedin.com",
+      "telegram": "https://web.telegram.org",
+      "facebook": "https://www.facebook.com"
+    }
+  },
+  {
+    "name": "portfolio",
+    "title": "Portfolio",
+    "subtitle": "My Works",
+    "description": "Here is some of my projects that I've done in various programming languages.",
+    "payload": {
+      "": ""
+    }
+  }
+]

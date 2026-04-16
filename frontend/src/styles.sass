@@ -1,0 +1,49 @@
+// theming components
+@use '@angular/material' as mat
+@use './styles/typography/config' as typography
+@use './styles/themes/light'
+@use './styles/themes/dark'
+@use './styles/components'
+
+@include mat.core()
+@include mat.core-theme(light.$angular-theme-app-light-theme)
+@include mat.card-theme(light.$angular-theme-app-light-theme)
+@include mat.form-field-theme(light.$angular-theme-app-light-theme)
+@include mat.button-theme(light.$angular-theme-app-light-theme)
+@include mat.all-component-themes(light.$angular-theme-app-light-theme)
+@include components.theme(light.$angular-theme-app-light-theme, typography.$angular-theme-app-typography, light.$angular-theme-app-light-variants)
+
+// Styling elements
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  list-style: none
+
+html
+  font-size: 10px
+
+body
+  height: 100%
+  font-family: Poppins, sans-serif
+  font-size: 1.4rem
+  line-height: 1.5
+  &::-webkit-scrollbar
+    width: 0px
+
+.mat-mdc-button,
+.mat-mdc-flat-button,
+.mat-mdc-stroked-button,
+.mat-mdc-raised-button,
+.mat-mdc-card
+  border-radius: 1rem !important
+
+.mdc-list-item__primary-text
+  display: flex
+  align-items: center
+
+.mdc-dialog__surface
+  border-radius: 2rem !important
+
+.mat-icon-button:active
+  background-color: transparent !important

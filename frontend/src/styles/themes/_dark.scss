@@ -1,0 +1,91 @@
+<<<<<<< Updated upstream
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@use '../typography/config' as typography;
+@use '../components';
+
+$angular-theme-app-dark-primary: mat.define-palette(mat.$blue-gray-palette);
+$angular-theme-app-dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$angular-theme-app-dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$angular-theme-app-dark-success: mat.define-palette(mat.$light-green-palette);
+$angular-theme-app-dark-info: mat.define-palette(mat.$light-blue-palette);
+$angular-theme-app-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $angular-theme-app-dark-primary,
+    accent: $angular-theme-app-dark-accent,
+    warn: $angular-theme-app-dark-warn,
+  ),
+
+));
+
+$angular-theme-app-dark-variants: (
+  success: $angular-theme-app-dark-success,
+  info: $angular-theme-app-dark-info
+);
+
+.dark-theme {
+  @include mat.core-theme($angular-theme-app-dark-theme);
+  @include mat.core-color($angular-theme-app-dark-theme);
+  @include mat.all-component-themes($angular-theme-app-dark-theme);
+  @include mat.toolbar-color($angular-theme-app-dark-theme);
+  @include mat.card-color($angular-theme-app-dark-theme);
+  @include mat.button-color($angular-theme-app-dark-theme);
+  @include components.theme(
+    $angular-theme-app-dark-theme,
+    typography.$angular-theme-app-typography,
+    $angular-theme-app-dark-variants
+  );
+  tr.detail-row {
+    height: 0 !important;
+  }
+}
+
+
+=======
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@use '../typography/config' as typography;
+@use '../components';
+
+$angular-theme-app-dark-primary: mat.m2-define-palette(mat.$m2-blue-gray-palette);
+$angular-theme-app-dark-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
+$angular-theme-app-dark-warn: mat.m2-define-palette(mat.$m2-deep-orange-palette);
+$angular-theme-app-dark-success: mat.m2-define-palette(mat.$m2-light-green-palette);
+$angular-theme-app-dark-info: mat.m2-define-palette(mat.$m2-light-blue-palette);
+$angular-theme-app-dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $angular-theme-app-dark-primary,
+    accent: $angular-theme-app-dark-accent,
+    warn: $angular-theme-app-dark-warn,
+  ),
+
+));
+
+$angular-theme-app-dark-variants: (
+  success: $angular-theme-app-dark-success,
+  info: $angular-theme-app-dark-info
+);
+
+.dark-theme {
+  @include mat.elevation-classes();
+  @include mat.app-background();
+  @include mat.elevation-classes();
+  @include mat.app-background();
+  @include mat.all-component-themes($angular-theme-app-dark-theme);
+  @include mat.toolbar-color($angular-theme-app-dark-theme);
+  @include mat.card-color($angular-theme-app-dark-theme);
+  @include mat.button-color($angular-theme-app-dark-theme);
+  @include components.theme(
+    $angular-theme-app-dark-theme,
+    typography.$angular-theme-app-typography,
+    $angular-theme-app-dark-variants
+  );
+  tr.detail-row {
+    height: 0 !important;
+  }
+}
+
+
+>>>>>>> Stashed changes

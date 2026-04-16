@@ -1,0 +1,50 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 1%;
+}
+
+.brand-title {
+  cursor: pointer;
+}
+
+.avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image-container {
+  width: 4rem;
+  height: 4rem;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+}
+.image-container.avatar-placeholder {
+  background-image: url("~src/assets/image/user.png");
+}
+
+.user-info {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.user-info .user-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.user-info .user-email {
+  font-size: 1.2rem;
+  font-weight: 200;
+  letter-spacing: 0.1rem;
+}/*# sourceMappingURL=header.component.css.map */

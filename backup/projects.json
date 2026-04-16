@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Cars Rant Site",
+    "image": {
+      "name": "Screenshot 2023-03-11 at 17.35.18.png"
+    },
+    "description": "Site for luxory cars rent firm.",
+    "skills": [
+      {
+        "name": "HTML",
+        "description": "Languag for web develop.",
+        "percent": 70
+      },
+      {
+        "name": "JavaScript",
+        "description": "Language for web site function",
+        "percent": 70
+      },
+      {
+        "name": "CSS",
+        "description": "Language for styling web pages.",
+        "percent": 65
+      }
+    ],
+    "links": {
+      "web": "https://cars-hw.netlify.app",
+      "github": "https://github.com/Victorvs1967/project04"
+    }
+  },
+  {
+    "name": "Architect Firm Site",
+    "image": {
+      "name": "Screenshot 2023-03-13 at 17.58.51.png"
+    },
+    "description": "Site for architect firm.",
+    "skills": [
+      {
+        "name": "HTML",
+        "description": "Languag for web develop.",
+        "percent": 70
+      },
+      {
+        "name": "JavaScript",
+        "description": "Language for web site function",
+        "percent": 70
+      },
+      {
+        "name": "CSS",
+        "description": "Language for styling web pages.",
+        "percent": 65
+      },
+      {
+        "name": "Gulp",
+        "description": "Tool for automate web develop",
+        "percent": 50
+      }
+    ],
+    "links": {
+      "web": "https://architech-firm-site.netlify.app/",
+      "github": "https://github.com/Victorvs1967/web-site"
+    }
+  },
+  {
+    "name": "Travel Agency Site",
+    "image": {
+      "name": "Screenshot 2023-03-13 at 18.13.27.png"
+    },
+    "description": "Site for travel agency (landing).",
+    "skills": [
+      {
+        "name": "HTML",
+        "description": "Languag for web develop.",
+        "percent": 70
+      },
+      {
+        "name": "JavaScript",
+        "description": "Language for web site function",
+        "percent": 70
+      },
+      {
+        "name": "CSS",
+        "description": "Language for styling web pages.",
+        "percent": 65
+      }
+    ],
+    "links": {
+      "web": "https://web-travel-site.netlify.app/",
+      "github": "https://github.com/Victorvs1967/web-site"
+    }
+  },
+  {
+    "name": "Weather Informer",
+    "image": {
+      "name": "Screenshot 2023-03-13 at 18.09.08.png"
+    },
+    "description": "Site for weather informer",
+    "skills": [
+      {
+        "name": "HTML",
+        "description": "Languag for web develop.",
+        "percent": 70
+      },
+      {
+        "name": "JavaScript",
+        "description": "Language for web site function",
+        "percent": 70
+      },
+      {
+        "name": "React JS",
+        "description": "Popular library for web develop.",
+        "percent": 50
+      },
+      {
+        "name": "CSS",
+        "description": "Language for styling web pages.",
+        "percent": 65
+      }
+    ],
+    "links": {
+      "web": "https://simple-js-weather-info.netlify.app/",
+      "github": "https://github.com/Victorvs1967/js-weather-app"
+    }
+  },
+  {
+    "name": "Food Delivery Service",
+    "image": {
+      "name": "Screenshot 2023-03-13 at 18.15.25.png"
+    },
+    "description": "Web site for food delivery service",
+    "skills": [
+      {
+        "name": "HTML",
+        "description": "Languag for web develop.",
+        "percent": 70
+      },
+      {
+        "name": "JavaScript",
+        "description": "Language for web site function",
+        "percent": 70
+      },
+      {
+        "name": "Java",
+        "description": "Best language for backend.",
+        "percent": 60
+      }
+    ],
+    "links": [
+      {
+        "name": "github",
+        "url": "https://github.com/Victoirvs1967/delivery-food-new"
+      },
+      {
+        "name": "web",
+        "url": "https://web-food-delivery.netlify.app/"
+      }
+    ]
+  }
+]

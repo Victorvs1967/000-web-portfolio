@@ -1,0 +1,78 @@
+// Portfolio
+.portfolio-text {
+ padding: 2rem 0;
+ text-align: center;
+}
+
+.portfolios {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 3rem;
+ margin-top: 3rem;
+
+ .portfolio-item {
+  position: relative;
+
+  .hover-items {
+   width: 100%;
+   height: 300px;
+   background-color: var(--color-secondary);
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-radius: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   opacity: 0;
+   transform: scale(0);
+   transition: all .4s ease-in-out;
+
+   h3 {
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+   }
+
+   .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+     background-color: var(--color-primary);
+     border-radius: 50%;
+     width: 50px;
+     height: 50px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 0 .5rem;
+     transition: all .4s ease-in-out;
+
+     fa-icon {
+      font-size: 2.6rem;
+      color: var(--color-white);
+      margin: 0 1rem;
+     }
+
+     &:hover {
+      background-color: var(--color-white);
+
+      fa-icon {
+       color: var(--color-primary);
+      }
+     }
+    }
+   }
+  }
+
+  &:hover .hover-items {
+   opacity: .9;
+   transform: scale(1);
+  }
+ }
+}
+
+@import "./media";

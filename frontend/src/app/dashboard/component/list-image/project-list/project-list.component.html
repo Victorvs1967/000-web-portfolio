@@ -1,0 +1,8 @@
+<mat-nav-list>
+  @for (project of projects; track project) {
+    <a mat-list-item (click)="toProject(project.id!)">
+      <span mat-line>{{ project.name }}: </span>
+      <span>{{ project.description }}</span>
+    </a>
+  }
+</mat-nav-list>

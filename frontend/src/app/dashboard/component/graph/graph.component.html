@@ -1,0 +1,52 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Programming Langugage Rating</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+        [type]="'doughnut'"
+        [labels]="doughnutChartLabels"
+        [datasets]="doughnutChartDataset"
+        [options]="doughnutChartOptions"
+      >
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Programming Langugage Rating</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+        [type]="'pie'"
+        [labels]="pieChartLabels"
+        [datasets]="pieChartDataset"
+        [options]="pieChartOptions"
+      >
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Programming Langugage Rating</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+        [type]="'line'"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        >
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>Programming Langugage Rating</mat-card-title>
+    <mat-card-content>
+      <canvas baseChart
+        [type]="'bar'"
+        [labels]="barChartLabels"
+        [data]="barChartData"
+        [options]="barChartOptions"
+        >
+      </canvas>
+    </mat-card-content>
+  </mat-card>
+</div>

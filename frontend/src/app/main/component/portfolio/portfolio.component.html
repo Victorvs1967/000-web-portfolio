@@ -1,0 +1,32 @@
+<section class="container sec-03 portfolio" id="portfolio">
+  <div class="main-title">
+    <h2>My <span>Portfolio</span><span class="bg-text">MyWorks</span></h2>
+  </div>
+  <p class="portfolio-text">
+    {{ page?.description }}
+  </p>
+  <div class="portfolio-container">
+    <div class="portfolios">
+      @for (project of projects; track project) {
+        <div class="portfolio-item">
+          <div class="image" id="{{ project.image.id }}"></div>
+          <div class="hover-items">
+            <h3>{{ project.name }}</h3>
+            <div class="icons" >
+              @if (project.links) {
+                <a class="icon" href="{{ project.links[0].url }}" target="_blank">
+                  <fa-icon [icon]="eye"></fa-icon>
+                </a>
+              }
+              @if (project.links) {
+                <a class="icon" href="{{ project.links[1].url }}" target="_blank">
+                  <fa-icon [icon]="github"></fa-icon>
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

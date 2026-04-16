@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>Edit User</h2>
+<button mat-icon-button class="btn-close" aria-label="Close" [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+<mat-divider></mat-divider>
+
+@if (editForm) {
+  <form mat-dialog-content [formGroup]="editForm" (ngSubmit)="submitEdit()">
+    <div class="form-inputs">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Enter username..." type="text" formControlName="username" required>
+        <mat-hint>username</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Enter email..." type="email" formControlName="email" required>
+        <mat-hint>email</mat-hint>
+      </mat-form-field>
+      <div class="fields-group">
+        <mat-form-field class="input-item" appearance="outline">
+          <mat-label>Firstname</mat-label>
+          <input matInput placeholder="Repeat first name..." type="text" formControlName="firstName">
+          <mat-hint>firstname</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input-item" appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input matInput placeholder="Enter lastname..." type="text" formControlName="lastName">
+          <mat-hint>lastname</mat-hint>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput placeholder="Enter phone..." type="tel" formControlName="phone">
+        <mat-hint>phone</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Enter address..." type="text" formControlName="address">
+        <mat-hint>address</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>User role</mat-label>
+        <mat-select formControlName="role">
+          @for (role of roles; track role) {
+            <mat-option
+              [value]="role.value"
+              >
+              {{role.viewValue}}
+            </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <div class="fields-group">
+        <div class="file-field">
+          <mat-form-field class="file-input" appearance="outline">
+            <mat-toolbar>
+              <input matInput class="img-input" [value]="photo.name || 'File name'" />
+              <button class="img-btn" mat-mini-fab color="primary" [disabled]="!currentPhoto" (click)="uploadPhoto($event)"><mat-icon>upload</mat-icon></button>
+            </mat-toolbar>
+            <input type="file" id="fileInput" (change)="selectPhoto($event)" />
+            <mat-hint>Photo image ID: {{ photo.id || 'Photo upload yet.' }}</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="file-field">
+          <mat-form-field class="file-input" appearance="outline">
+            <mat-toolbar>
+              <input matInput class="img-input" [value]="avatar.name || 'File name'" />
+              <button class="img-btn" mat-mini-fab color="primary" [disabled]="!currentAvatar" (click)="uploadAvatar($event)"><mat-icon>upload</mat-icon></button>
+            </mat-toolbar>
+            <input type="file" id="fileInput" (change)="selectAvatar($event)" />
+            <mat-hint>Avatar image ID: {{ avatar.id || 'Avatar upload yet.' }}</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+      <div mat-dialog-actions class="btn-group" [align]="'end'">
+        <button mat-stroked-button [mat-dialog-close]="true" color="primary" type="submit" [disabled]="editForm.invalid">Submit</button>
+      </div>
+    </div>
+  </form>
+}

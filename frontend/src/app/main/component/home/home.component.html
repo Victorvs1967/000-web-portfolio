@@ -1,0 +1,25 @@
+<header class="container sec-01 header active" id="home">
+  <div class="header-content">
+    <div class="left-header">
+      <div class="h-shape"></div>
+      @if (user) {
+        <div class="image" id="{{ user.photo.id }}" (mouseenter)="inHover()" (mouseout)="outHover()"></div>
+      }
+    </div>
+    @if (heroPage) {
+      <div class="right-header" >
+        <h1 class="name">
+          Hi, I'm <span class="point">{{ heroPage.title }}</span><br>
+          <span>{{ heroPage.subtitle }}</span>
+        </h1>
+        <p>{{ heroPage.description }}</p>
+        <div class="btn-container">
+          <a href="#" class="main-btn">
+            <span class="btn-text">Download CV</span>
+            <span mat-icon-button class="btn-icon"><mat-icon>download</mat-icon></span>
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</header>

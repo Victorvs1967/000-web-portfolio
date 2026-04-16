@@ -1,0 +1,73 @@
+<section class="container sec-02 about" id="about">
+  <div class="main-title">
+    <h2>About <span>me</span><span class="bg-text">mystats</span></h2>
+  </div>
+  <div class="about-container">
+    @if (heroPage) {
+      <div class="left-about">
+        <h4>{{ heroPage.title }}</h4>
+        <p>{{ heroPage.description }}</p>
+        <div class="btn-container">
+          <a href="#" class="main-btn">
+            <span class="btn-text">Download CV</span>
+            <span mat-icon-button class="btn-icon"><mat-icon>download</mat-icon></span>
+          </a>
+        </div>
+      </div>
+    }
+    <div class="right-about">
+      <div class="about-item">
+        <div class="about-text">
+          <p class="large-text">{{ heroPage?.payload.cards.projects }}</p>
+          <p class="small-text">Projects<br />completed</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-text">
+          <p class="large-text">{{ heroPage?.payload.cards.years }}</p>
+          <p class="small-text">Years<br />of experience</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-text">
+          <p class="large-text">{{ heroPage?.payload.cards.clients }}</p>
+          <p class="small-text">Happy<br />clients</p>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-text">
+          <p class="large-text">{{ heroPage?.payload.cards.reviews }}</p>
+          <p class="small-text">Customer<br />reviews</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-stats">
+    <h4 class="stats-title">My Skills</h4>
+    <div class="progress-bars">
+      @for (skill of skills; track skill) {
+        <figure>
+          <div class="progress-bar">
+            <p class="progress-title">{{ skill }}</p>
+            <div class="progress-container">
+              <p class="progress-text">{{ heroPage?.payload.skills[skill] }}%</p>
+              <div class="progress">
+                <span [ngStyle]="{width: heroPage?.payload.skills[skill] + '%'}"></span>
+              </div>
+            </div>
+          </div>
+        </figure>
+      }
+    </div>
+  </div>
+  <div class="timeline">
+    @for (year of years; track year) {
+      <div class="timeline-item">
+        <div class="timeline-icon"><fa-icon [icon]="faBrifcace"></fa-icon></div>
+        <p class="timeline-duration">{{ year }}</p>
+        <h5>{{ heroPage?.payload.cv[year].position }}<span> - {{ heroPage?.payload.cv[year].company }}</span></h5>
+        <p>{{ heroPage?.payload.cv[year].description }}</p>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<div mat-dialog-content class="alert" role="alert">
+  <h2 mat-dialog-title class="alert-heading">
+    <span><mat-icon color="warn">pan_tool</mat-icon>&nbsp;&nbsp;{{ data.title }}</span>
+    @if (isAdmin | async) {
+      <button mat-icon-button class="alert-close" aria-label="Close" [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+    }
+    @if (!(isAdmin | async)) {
+      <button mat-icon-button class="alert-close" aria-label="Close" [mat-dialog-close]="false"><mat-icon>close</mat-icon></button>
+    }
+  </h2>
+  <div class="alert-message">
+    {{ data.message }}&nbsp;
+    <a class="alert-link" [mat-dialog-close]="true">click here</a>.
+    <mat-divider></mat-divider>
+  </div>
+  <div class="alert-footer">
+    {{ data.subtitle }}
+  </div>
+</div>
