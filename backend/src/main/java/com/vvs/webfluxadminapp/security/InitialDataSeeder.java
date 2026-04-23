@@ -6,6 +6,7 @@ import java.time.Instant;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.context.ApplicationListener;
+import org.springframework.lang.NonNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -36,7 +37,7 @@ public class InitialDataSeeder implements ApplicationListener<ApplicationStarted
   private final PasswordEncoder passwordEncoder;
 
   @Override
-  public void onApplicationEvent(ApplicationStartedEvent event) {
+  public void onApplicationEvent(@NonNull ApplicationStartedEvent event) {
     userRepository.findUserByUsername(username)
       .switchIfEmpty(createAdmin())
       .subscribe();
