@@ -45,22 +45,20 @@ public class SecurityConfig {
   @Bean
   public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
     return http
-      .cors().configurationSource(creatConfigurationSource()).and()
-      .exceptionHandling()
-      .authenticationEntryPoint((shs, e) -> Mono.fromRunnable(() -> shs.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
-      .accessDeniedHandler((shs, e) -> Mono.fromRunnable(() -> shs.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
-      .and()
-      .csrf().disable()
-      .formLogin().disable()
-      .authenticationManager(authenticationManager)
-      .securityContextRepository(securityContextRepository)
-      .authorizeExchange()
-      .pathMatchers(HttpMethod.PUT).hasAnyAuthority("ADMIN", "MANAGER")
-      .pathMatchers(HttpMethod.DELETE).hasAnyAuthority("ADMIN", "MANAGER")
-      .pathMatchers(HttpMethod.OPTIONS).permitAll()
-      .pathMatchers(WHITELIST_AUTH_URLS).permitAll()
-      .anyExchange().authenticated()
-      .and()
+      .cors(cors -> cors.configurationSource(creatConfigurationSource()))
+      .exceptionHandling(handling -> handling
+        .authenticationEntryPoint((shs, e) -> Mono.fromRunnable(() -> shs.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
+        .accessDeniedHandler((shs, e) -> Mono.fromRunnable(() -> shs.getResponse().setStatusCode(HttpStatus.FORBIDDEN))))
+      .csrf(csrf -> csrf.disable()
+          .formLogin(login -> login.disable()
+                .authenticationManager(authenticationManager)
+                .securityContextRepository(securityContextRepository)
+                .authorizeExchange(exchange -> exchange
+                          .pathMatchers(HttpMethod.PUT).hasAnyAuthority("ADMIN", "MANAGER")
+                          .pathMatchers(HttpMethod.DELETE).hasAnyAuthority("ADMIN", "MANAGER")
+                          .pathMatchers(HttpMethod.OPTIONS).permitAll()
+                          .pathMatchers(WHITELIST_AUTH_URLS).permitAll()
+                          .anyExchange().authenticated())))
       .build();
   }
 

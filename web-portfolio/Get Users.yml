@@ -1,0 +1,17 @@
+info:
+  name: Get Users
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: http://localhost:8088/api/users
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTc3NzQ2OTc2MSwiaWF0IjoxNzc3MzgzMzYxfQ.BSmKZQLscHgDIhKGfogPdjuFd2SS4-dva9oVR6ku6nn9W5VdNEd0Tu6dpoCPqR_z4HW8KheZ9X7ai5jU-IgLJg
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
