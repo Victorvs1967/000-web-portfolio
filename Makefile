@@ -13,7 +13,7 @@ build:
 	docker push victorvsm/portfolio_frontend:v01
 
 run:
-	docker-compose -f docker-compose.yml up -d --build
+	docker-compose -f docker-compose-online.yml up -d --build
 
 stop:
-	docker-compose -f docker-compose.yml downf
+	docker-compose -f docker-compose-online.yml down

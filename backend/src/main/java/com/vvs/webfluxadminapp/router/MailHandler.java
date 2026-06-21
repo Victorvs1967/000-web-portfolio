@@ -27,6 +27,7 @@ public class MailHandler {
       .flatMap(msg -> ServerResponse
         .ok()
         .contentType(MediaType.APPLICATION_JSON)
-        .body(Mono.just(Map.of("message", "Message sent successfully...")), Map.class));
+        .body(Mono.just(Map.of("message", "Message sent successfully...")), Map.class))
+        .log(message.toString());
   }
 }

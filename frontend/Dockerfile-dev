@@ -1,4 +1,4 @@
-FROM node:18 AS build
+FROM node:24.14 AS build
 
 RUN mkdir /home/app
 WORKDIR /home/app
@@ -15,4 +15,4 @@ RUN ng build --configuration development
 
 FROM nginx:latest
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /home/app/dist /usr/share/nginx/html
+COPY --from=build /home/app/dist/browser /usr/share/nginx/html
